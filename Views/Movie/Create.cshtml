@@ -1,0 +1,11 @@
+﻿
+<form asp-action="SaveNew" asp-controller="Movie" method="get">
+	<partial name="_createeditpartial.cshtml"></partial>
+	<div class="form-group">
+		<button class="btn btn-primary" type="submit">Sign Up</button>
+		<a asp-action="Index" asp-controller="Movie" class="btn btn-secondary float-right">Cancel</a>
+	</div>
+</form>
+@section Scripts{
+	<partial name="_ValidationScriptsPartial.cshtml"></partial>
+}

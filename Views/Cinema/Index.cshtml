@@ -1,0 +1,23 @@
+﻿@model List<Cinema>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Cinema Name</th>
+            <th scope="col">Cinema Address</th>
+            <th scope="col">Cinema Logo</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Cinema cinema in Model)
+        {
+            <tr>
+                <td>@cinema.Name</td>
+                <td>@cinema.Address</td>
+                <td>@cinema.Cinemaloga</td>
+                <td><a asp-action="GetMovies" asp-controller="Cinema" asp-route-id="@cinema.CinemaId" >Show Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

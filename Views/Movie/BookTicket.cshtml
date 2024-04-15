@@ -1,0 +1,58 @@
+﻿@* @model Movie
+<h1 class="align-content-center">Your Shopping Card</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Selected Amount</th>
+            <th scope="col">Movie</th>
+            <th scope="col">Price</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td>@Model.Name</td>
+            <td>@Model.Price</td>
+            <td>@Model.Price</td>
+            <td>
+                <a asp-action="Index" asp-controller="Movie">Edit</a> || <a asp-action="Delete" asp-controller="Movie">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-outline-success" asp-action="#" asp-controller="#">Add More Items</button> *@
+@model List<Movie>
+<h1 class="align-content-center">Your Shopping Card</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Selected Amount</th>
+            <th scope="col">Movie</th>
+            <th scope="col">Price</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    @{
+        foreach (var Movie in Model)
+        {
+        <tr>
+            <td></td>
+            <td>@Movie.Name</td>
+            <td>@Movie.Price</td>
+            <td>@Movie.Price</td>
+            <td>
+                <a asp-action="Index" asp-controller="Movie">Edit</a> || <a asp-action="Delete" asp-controller="Movie">Delete</a>
+            </td>
+        </tr>
+                }
+            }
+    </tbody>
+</table>
+<a class="btn btn-outline-success" asp-action="Index" asp-controller="Movie">Add More Items</a>
+        
+   

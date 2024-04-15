@@ -1,0 +1,15 @@
+﻿@model Actor
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h1>@Model.FirstName @Model.LastName</h1>
+            <!-- Increase the size of the profile picture -->
+            <img src="/images/cast/@Model.ProfilePicture" class="rounded-circle img-fluid mb-3" alt="Profile Picture" style="width: 200px; height: 200px;">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <p class="text-center">@Model.Bio</p>
+        </div>
+    </div>
+</div>

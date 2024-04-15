@@ -1,0 +1,24 @@
+﻿@model Movie
+
+    <div class="card">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="~/images/movies/@Model.ImgUrl" class="card-img-top" alt="...">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <p class="align-bottom">Price: <span class="btn btn-outline-secondary">@Model.Price</span></p>
+                <p class="card-text">Cinema: @Model.Cinema.Name</p>
+                <p class="card-text">Star Date: @Model.StartDate</p>
+                <p class="card-text">End Date: @Model.EndDate</p><br />
+                @foreach(Actor actor in Model.Actors)
+                    {
+                    <a asp-action="ShowDetails" asp-controller="Actor" asp-route-id="@actor.Id"><img src="/images/cast/@actor.ProfilePicture" class="rounded-circle"></img></a>
+                    }<br /><br />
+                <p>Category: <a asp-action="GetMovies" asp-controller="Category" asp-route-id="@Model.CategoryId"> <span class="btn btn-outline-primary">@Model.Category.Name </span></a></p>
+                <p>Satus:<span class="btn btn-warning">@Model.MovieStatus</span> </p>
+                <a asp-action="BookTicket" asp-controller="Movie" class="btn btn-success ">Book Ticket</a>
+            </div>
+        </div>
+    </div>
+
