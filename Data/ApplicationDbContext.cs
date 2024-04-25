@@ -31,5 +31,6 @@ namespace Movie_Point.Data
 		public DbSet<Movie_Point.ViewModel.ApplicationUserVM> ApplicationUserVM { get; set; } = default!;
 		public DbSet<Movie_Point.ViewModel.UserLoginVM> UserLoginVM { get; set; } = default!;
 		public DbSet<Movie_Point.ViewModel.UserRoleVM> UserRoleVM { get; set; } = default!;
+		public DbSet<Movie_Point.ViewModel.ActorViewModel> ActorViewModel { get; set; } = default!;
 	}
 }

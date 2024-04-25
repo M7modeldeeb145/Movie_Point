@@ -29,6 +29,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Cinema" asp-action="Index">Cinemas</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Actor" asp-action="GetAll">Actors</a>
+                        </li>
                         <!-- Dropdown Menu -->
                         @if (User.IsInRole("Admin"))
                         {
@@ -40,6 +43,7 @@
                                     <li><a class="dropdown-item" asp-action="Create" asp-controller="Movie">Create New Film</a></li>
                                     <li><a class="dropdown-item" asp-action="Create" asp-controller="Category">Create New Category</a></li>
                                     <li><a class="dropdown-item" asp-action="Create" asp-controller="Role">Create New Role</a></li>
+                                    <li><a class="dropdown-item" asp-action="Create" asp-controller="Actor">Create New Actor </a></li>
                                 </ul>
                             </div>
                         }
@@ -56,7 +60,7 @@
                             <a class="nav-link text-dark" asp-action="Logout" asp-controller="Account" role="button">
                                 <i class="bi bi-box-arrow-in-right"></i> LogOut
                             </a>
-                            <a class="nav-link text-dark" asp-action="" asp-controller="" role="button">
+                            <a class="nav-link text-dark" asp-action="CurrentUserDetails" asp-controller="Account" role="button">
                                 <i class="bi bi-box-arrow-in-right"></i> Welcome @User.Identity.Name
                             </a>
                         }

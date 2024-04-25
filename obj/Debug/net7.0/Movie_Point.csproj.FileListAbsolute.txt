@@ -257,3 +257,4 @@ C:\Users\DEBO\source\repos\Movie_Point\bin\Debug\net7.0\Microsoft.AspNetCore.Ide
 C:\Users\DEBO\source\repos\Movie_Point\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\DEBO\source\repos\Movie_Point\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\DEBO\source\repos\Movie_Point\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\DEBO\source\repos\Movie_Point\obj\Debug\net7.0\Movie_Point.sourcelink.json

@@ -11,7 +11,7 @@ namespace Movie_Point.Controllers
 {
     public class MovieController : Controller
     {
-        List<Movie> movies = new List<Movie>();
+        //List<Movie> movies = new List<Movie>();
         IMovie repository;
         public MovieController(IMovie repository)
         {
@@ -58,7 +58,20 @@ namespace Movie_Point.Controllers
             {
                 return RedirectToAction("Index");
             }
-            MovieViewModel movieViewModel = new MovieViewModel() { Name=movie.Name,Id=movie.Id,Description=movie.Description,Price=movie.Price,StartDate=movie.StartDate,EndDate=movie.EndDate,ImgUrl=movie.ImgUrl,TrailerUrl=movie.TrailerUrl,CategoryId=movie.CategoryId,CinemaId=movie.CinemaId,MovieStatus=movie.MovieStatus};
+            MovieViewModel movieViewModel = new MovieViewModel() 
+            { 
+                Name=movie.Name
+                ,Id=movie.Id
+                ,Description=movie.Description
+                ,Price=movie.Price
+                ,StartDate=movie.StartDate
+                ,EndDate=movie.EndDate
+                ,ImgUrl=movie.ImgUrl
+                ,TrailerUrl=movie.TrailerUrl
+                ,CategoryId=movie.CategoryId
+                ,CinemaId=movie.CinemaId
+                ,MovieStatus=movie.MovieStatus
+            };
             ViewData["categories"] = repository.GetCategories();
             ViewData["cinemas"] = repository.GetCinemas();
             return View(movieViewModel);
@@ -90,12 +103,12 @@ namespace Movie_Point.Controllers
             var movie = repository.Search(name);
             return View(movie);
         }
-        [Authorize(Roles = "User")]
+        [Authorize]
         public IActionResult BookTicket(int id)
         {
             var movie =repository.Get(id);
-            movies.Add(movie);
-            return View(movies);
+            //movies.Add(movie);
+            return View(movie);
         }
     }
 }

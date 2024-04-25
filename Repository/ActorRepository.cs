@@ -1,6 +1,7 @@
 ﻿using Movie_Point.Data;
 using Movie_Point.IRepository;
 using Movie_Point.Models;
+using Movie_Point.ViewModel;
 
 namespace Movie_Point.Repository
 {
@@ -38,6 +39,19 @@ namespace Movie_Point.Repository
         }
 
         public void Update(Actor actor)
+        {
+            var Edit = context.Actors.Find(actor.Id);
+            if (Edit != null)
+            {
+                Edit.FirstName = actor.FirstName;
+                Edit.LastName = actor.LastName;
+                Edit.ProfilePicture = actor.ProfilePicture;
+                Edit.Bio = actor.Bio;
+                Edit.News = actor.News;
+                context.SaveChanges();
+            }
+        }
+        public void Update(ActorViewModel actor)
         {
             var Edit = context.Actors.Find(actor.Id);
             if (Edit != null)

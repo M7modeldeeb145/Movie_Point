@@ -73,11 +73,23 @@ namespace Movie_Point.Controllers
             }
             return View(UserVM);
         }
-        //[HttpPost]
-        public async Task<IActionResult> Logout()
+		[HttpGet]
+		public async Task<IActionResult> CurrentUserDetails()
+		{
+			var user = await userManager.GetUserAsync(User);
+			if (user == null)
+			{
+				return RedirectToAction("Login", "Account");
+			}
+
+			return View(user);
+		}
+		//[HttpPost]
+		public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-    }
+
+	}
 }

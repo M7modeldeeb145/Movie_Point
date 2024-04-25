@@ -1,9 +1,8 @@
-﻿@* @model Movie
+﻿@model Movie
 <h1 class="align-content-center">Your Shopping Card</h1>
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Selected Amount</th>
             <th scope="col">Movie</th>
             <th scope="col">Price</th>
             <th scope="col">Subtotal</th>
@@ -12,7 +11,6 @@
     </thead>
     <tbody>
         <tr>
-            <td></td>
             <td>@Model.Name</td>
             <td>@Model.Price</td>
             <td>@Model.Price</td>
@@ -22,8 +20,8 @@
         </tr>
     </tbody>
 </table>
-<button class="btn btn-outline-success" asp-action="#" asp-controller="#">Add More Items</button> *@
-@model List<Movie>
+<button class="btn btn-outline-success" asp-action="#" asp-controller="#">Add More Items</button>
+@* @model List<Movie>
 <h1 class="align-content-center">Your Shopping Card</h1>
 <table class="table">
     <thead>
@@ -55,4 +53,4 @@
 </table>
 <a class="btn btn-outline-success" asp-action="Index" asp-controller="Movie">Add More Items</a>
         
-   
+    *@
